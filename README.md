@@ -2,9 +2,10 @@
 
 > Android logická hra zaměřená na dosažení cílového čísla pomocí minimálního počtu tahů.
 
-Minimal Moves je mobilní aplikace vytvořená v Kotlinu s využitím Jetpack Compose.  
-Projekt slouží jako školní práce demonstrující návrh aplikace, architekturu MVVM
-a práci s lokální databází.
+Minimal Moves je mobilní aplikace vytvořená v **Kotlinu** s využitím **Jetpack Compose**  
+a klasických Android komponent.  
+Projekt slouží jako **školní práce** demonstrující návrh aplikace, architekturu **MVVM**
+a práci s **lokální databází**.
 
 ---
 
@@ -12,8 +13,9 @@ a práci s lokální databází.
 
 - Vytvořit jednoduchou, ale zábavnou logickou hru
 - Použít moderní Android technologie
-- Oddělit logiku aplikace od UI
+- Oddělit logiku aplikace od uživatelského rozhraní
 - Navrhnout přehlednou a rozšiřitelnou architekturu
+- Splnit požadavky na práci s databází a seznamy dat
 
 ---
 
@@ -47,10 +49,68 @@ Výsledek hry je ohodnocen pomocí hvězdiček:
 - 📜 Historie odehraných her
 - 🗑️ Mazání historie s potvrzovacím dialogem
 - 🌙 Podpora tmavého režimu (system default)
+- 🔄 Správná reakce UI na otočení zařízení
+
+---
+
+## 📜 Historie her (RecyclerView)
+
+Historie odehraných her je zobrazena pomocí **RecyclerView**, který:
+
+- efektivně zobrazuje seznam herních výsledků
+- odděluje logiku seznamu od jeho vzhledu
+- používá vlastní layout položky (`item_game_result.xml`)
+- umožňuje snadné rozšíření (např. detail výsledku)
+
+Každá položka historie obsahuje:
+- počáteční hodnotu
+- cílovou hodnotu
+- počet tahů
+
+Toto řešení odpovídá standardním Android postupům a splňuje požadavek na použití
+**RecyclerView**.
 
 ---
 
 ## 🏗️ Architektura aplikace
 
-Projekt je navržen podle architektury **MVVM**:
+Projekt je navržen podle architektury **MVVM (Model–View–ViewModel)**:
 
+- **Model**
+  - Datové třídy
+  - Room databáze pro ukládání historie her
+
+- **View**
+  - Jetpack Compose obrazovky
+  - XML layouty pro RecyclerView
+
+- **ViewModel**
+  - Obsahuje herní logiku
+  - Pracuje se stavem hry
+  - Zprostředkovává komunikaci mezi UI a databází
+
+Tento přístup zajišťuje:
+- lepší přehlednost kódu
+- snadnější údržbu
+- oddělení logiky od UI
+
+---
+
+## 🛠️ Použité technologie
+
+- Kotlin
+- Jetpack Compose
+- RecyclerView
+- Room Database
+- MVVM architektura
+- Material Design 3
+
+---
+
+## 📌 Poznámka
+
+Projekt je vytvořen jako **školní práce** se zaměřením na:
+- architekturu aplikace
+- práci s databází
+- správu stavu
+- moderní Android vývoj

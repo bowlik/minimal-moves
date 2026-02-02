@@ -8,18 +8,6 @@ a práci s lokální databází.
 
 ---
 
-## 📱 Náhled aplikace
-
-<p align="center">
-  <img src="screenshots/menu.png" width="200"/>
-  <img src="screenshots/gameplay.png" width="200"/>
-  <img src="screenshots/win.png" width="200"/>
-</p>
-
-*(screenshoty jsou ilustrační – můžeš je kdykoliv doplnit)*
-
----
-
 ## 🎯 Cíl projektu
 
 - Vytvořit jednoduchou, ale zábavnou logickou hru
